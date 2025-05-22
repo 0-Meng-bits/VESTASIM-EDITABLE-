@@ -22,7 +22,7 @@ ul {
     font-weight: bold;
 }
 
-/*atong navbar*/
+/* Navbar */
 .navbar {
     position: absolute;
     top: 0;
@@ -55,7 +55,7 @@ a {
     color: #0088a9;
 }
 
-/*button dropdown*/
+/* Button Dropdown */
 .menubtn {
     position: absolute;
     top: 30px;
@@ -66,14 +66,14 @@ a {
 }
 
 ul li {
-    position: relative; /* Ensure the dropdown positions relative to the parent */
+    position: relative;
 }
 
     ul li ul.dropdown {
         position: absolute;
-        top: 100%; /* Directly below the parent */
+        top: 100%;
         left: 0;
-        width: 120px; /* Increase width to avoid quick disappearing */
+        width: 120px;
         background: #1d2d44;
         z-index: 999;
         display: none;
@@ -89,7 +89,7 @@ ul li {
             display: block;
         }
 
-/*home section (bg, simulate and welcome)*/
+/* Home Section */
 #home {
     width: 100vw;
     height: 100vh;
@@ -138,7 +138,7 @@ ul li {
     transition: all 0.3s ease 0s;
 }
 
-/*buy and sell section*/
+/* Buy and Sell Section */
 #buysell {
     width: 80%;
     margin: 80px auto;
@@ -147,7 +147,7 @@ ul li {
 .row-buysell {
     display: flex;
     flex-wrap: wrap;
-    gap: 30px 30px;
+    gap: 30px;
     justify-content: center;
 }
 
@@ -164,18 +164,9 @@ ul li {
     align-items: center;
     padding: 10px;
     width: calc(33.33% - 20px);
-}
-
-h2 {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.col-buysell {
     background: #f0ebd8;
     overflow: hidden;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    width: calc(33.33% - 20px);
     transition: transform 0.3s;
 }
 
@@ -220,7 +211,7 @@ h2 {
     border-top: 1px solid #eee;
 }
 
-.view-btn {
+#view-btn {
     font-size: 3vmin;
     display: inline-block;
     margin-top: 10px;
@@ -228,14 +219,132 @@ h2 {
     border-radius: 30px;
     color: #f0ebd8;
     cursor: pointer;
-    font-size: 3vmin;
     background-color: #0d1321;
     transition: all 0.3s ease 0s;
 }
 
-/*animation of img*/
+
+/*CRUD SSECTION*/
+/* Place this at the bottom of buy.css or in a <style> block to ensure it overrides other styles */
+.crud-wrapper {
+    position: fixed !important; /* Fix position relative to the viewport */
+    top: 50% !important; /* Move to center vertically */
+    left: 50% !important; /* Move to center horizontally */
+    transform: translate(-50%, -50%) !important; /* Shift back by 50% of width and height */
+    background-color: white !important; /* Optional: background color */
+    z-index: 9999 !important; /* Ensure it's above everything */
+    padding: 40px !important; /* Add spacing */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2) !important; /* Optional: subtle shadow */
+    border-radius: 10px !important; /* Optional: rounded corners */
+    width: 500px !important; /* Adjust width as needed */
+    max-width: 90% !important; /* Responsive on smaller screens */
+}
+
+
+
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 10000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.6);
+}
+
+    .modal.show {
+        display: block;
+    }
+
+.modal-content {
+    background-color: #fff;
+    margin: 5% auto;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    z-index: 10001;
+}
+
+.wide-modal {
+    width: 90%;
+    max-width: 900px;
+}
+
+.modal-body {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.modal-image {
+    width: 50%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 8px;
+}
+
+.modal-text {
+    flex: 1;
+}
+
+.close {
+    float: right;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Image Gallery */
+.image-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.image-item {
+    display: flex;
+    flex-direction: column;
+    background-color: #f8f8f8;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.gallery-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.image-details {
+    padding: 15px;
+    background-color: #fff;
+    text-align: center;
+}
+
+    .image-details h4 {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+
+    .image-details p {
+        margin: 5px 0;
+        font-size: 14px;
+    }
+
+.price {
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+/* Image Animation */
 img {
-    transition: transform.3s ease;
+    transition: transform 0.3s ease;
 }
 
     img:hover {
@@ -248,27 +357,17 @@ img {
     box-shadow: 2px 2px 5px #00000056;
 }
 
-/*para responsive sad sa mobile*/
+/* Responsive Design */
 @media only screen and (max-width: 850px) {
     .navbar {
         padding: 0;
     }
 
-    .ctn {
+    .ctn, #ctn {
         background-color: #0d1321;
-        transition: all 0.3s ease 0s;
     }
 
-        .ctn:hover {
-            background-color: #0d1321;
-        }
-
-    #ctn {
-        background-color: #0d1321;
-        transition: all 0.3s ease 0s;
-    }
-
-        #ctn:hover {
+        .ctn:hover, #ctn:hover {
             background-color: #0d1321;
         }
 
@@ -279,11 +378,6 @@ img {
         width: 40px;
         cursor: pointer;
         display: block;
-    }
-
-    .navbar {
-        padding: 0;
-        margin: 30px auto;
     }
 
     .logo {
@@ -311,15 +405,10 @@ img {
         margin: 30px auto;
     }
 
-        .navlinks li a {
-            transition: all 0.3s ease 0s;
+        .navlinks li a:hover {
+            color: #0088a9;
         }
 
-            .navlinks li a:hover {
-                color: #0088a9;
-            }
-
-    /*buy and sell content*/
     .row-buysell {
         display: flex;
         flex-direction: row;
@@ -327,17 +416,17 @@ img {
         overflow-x: scroll;
         max-width: 100%;
         white-space: nowrap;
-        gap: 200px; /* Control ang spacing*/
+        gap: 200px;
     }
 
         .row-buysell .col-buysell {
-            width: 50%; /*fixed width diri is set na*/
+            width: 50%;
             flex: 0 0 auto;
-            margin: 0; /*for unnecessary margin*/
+            margin: 0;
         }
 
     .col-buysell img {
-        max-width: 100%; /*Ensures image fills the column*/
+        max-width: 100%;
         display: inline-block;
     }
 
@@ -347,20 +436,6 @@ img {
 
     .footer {
         padding: 10px;
-    }
-
-    img {
-        transition: transform.3s ease;
-    }
-
-        img:hover {
-            transform: scale(1.1);
-        }
-
-    .ctn:hover {
-        background: whitesmoke;
-        color: #fc036b;
-        box-shadow: 2px 2px 5px #00000056;
     }
 }
 
@@ -377,7 +452,6 @@ img {
     transition: 0.1s ease;
 }
 
-/*login*/
 .show-popup .blur-bg-overlay {
     opacity: 1;
     pointer-events: auto;
@@ -412,32 +486,24 @@ img {
     cursor: pointer;
 }
 
-.form-popup .form-box {
+.form-box {
     display: flex;
 }
 
-.form-box .form-details {
-    max-width: 330px;
-    width: 100%;
-    color: #f0ebd8;
-    display: flex;
-    padding: 0 20px;
-    text-align: center;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-shadow: 5px 5px 10px black;
-}
+    .form-box .form-details {
+        max-width: 330px;
+        width: 100%;
+        color: #f0ebd8;
+        display: flex;
+        padding: 0 20px;
+        text-align: center;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-shadow: 5px 5px 10px black;
+    }
 
-.login .form-details {
-    background-image: url('IMG/bg-housse.png');
-    background-size: cover;
-    background-position: center;
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
-}
-
-.signup .form-details {
+.login .form-details, .signup .form-details {
     background-image: url('IMG/bg-housse.png');
     background-size: cover;
     background-position: center;
@@ -509,26 +575,6 @@ form .input-field {
     font-size: 0.95rem;
 }
 
-form button {
-    width: 100%;
-    outline: none;
-    border: none;
-    font-size: 1rem;
-    font-weight: 600;
-    padding: 14px 0;
-    border-radius: 20px;
-    margin: 25px 0;
-    color: #F0EBD8;
-    cursor: pointer;
-    background-color: #1d2d44;
-    transition: 0.2s ease;
-    box-shadow: 1px 1px 5px #0d1321;
-}
-
-    form button:hover {
-        background-color: #3E5C76;
-    }
-
 .form-box .button-link {
     text-align: center;
 }
@@ -553,42 +599,7 @@ form button {
         margin-right: 7px;
     }
 
-@media screen and (max-width: 950px) {
-    .navbar .login-btn {
-        font-size: 0.9rem;
-        padding: 7px 10px;
-    }
-}
-
-@media screen and (max-width: 760px) {
-    .navbar {
-        flex-direction: column;
-        padding: 1rem;
-    }
-
-    .navlinks {
-        flex-direction: column;
-        gap: 1rem;
-    }
-
-    .header-content {
-        width: 95%;
-    }
-
-    .form-popup {
-        width: 95%;
-    }
-
-    .form-box .form-details {
-        display: none;
-    }
-
-    .form-box .form-content {
-        padding: 30px 20px;
-    }
-}
-
-/*footer section here*/
+/* Footer Section */
 footer {
     background: #1d2d44;
     color: #f0ebd8;
@@ -651,21 +662,31 @@ footer {
                     color: #0088a9;
                 }
 
-
 /* Search Section Styles */
 #search-section {
     padding: 30px 0;
     text-align: center;
+    position: relative;
+}
+
+.search-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    position: relative;
+    min-height: 60px;
 }
 
 .search-bar {
     display: inline-flex;
     align-items: center;
     gap: 5px;
+    position: relative;
 }
 
 #txtSearch.search-input {
-    color: white;
+    color: #f0ebd8;
 }
 
 .search-input {
@@ -698,3 +719,112 @@ footer {
     .search-btn:hover {
         background-color: #3e5c76;
     }
+
+/* Suggestions Box */
+.suggestions-box {
+    border: 1px solid white;
+    max-height: 200px;
+    overflow-y: auto;
+    background: rgba(29, 45, 68, 0.8);
+    position: absolute;
+    z-index: 1000;
+    width: 500px;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 10px;
+    display: none;
+}
+
+    .suggestions-box.visible {
+        display: block;
+    }
+
+/* Property Results */
+#propertyResults {
+    position: absolute;
+    top: 60px;
+    margin: 20px auto;
+    text-align: center;
+    width: 68%;
+    max-height: 300px;
+    overflow-y: auto;
+    border: 1px solid white;
+    border-radius: 10px;
+    background-color: rgba(29, 45, 68, 0.5);
+    padding: 10px;
+    box-sizing: border-box;
+    opacity: 0;
+    transition: opacity 0.3s ease, max-height 0.3s ease;
+}
+
+    #propertyResults.visible {
+        opacity: 1;
+    }
+
+    #propertyResults.no-results {
+        max-height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-style: italic;
+        color: #f0ebd8;
+    }
+
+    #propertyResults:hover {
+        background-color: rgba(50, 20, 20, 0.5);
+    }
+
+.property-item {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: left;
+    color: #f0ebd8;
+    border: none;
+}
+
+    .property-item:hover {
+        background-color: rgba(50, 20, 20, 0.5);
+    }
+
+/* Responsive Media Queries */
+@media screen and (max-width: 950px) {
+    .navbar .login-btn {
+        font-size: 0.9rem;
+        padding: 7px 10px;
+    }
+
+    .search-input {
+        width: 400px;
+    }
+
+    .suggestions-box {
+        width: 400px;
+    }
+}
+
+@media screen and (max-width: 760px) {
+    .navbar {
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    .navlinks {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .search-input {
+        width: 90%;
+    }
+
+    .suggestions-box {
+        width: 90%;
+    }
+
+    #propertyResults {
+        width: 90%;
+    }
+}
