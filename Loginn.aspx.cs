@@ -184,12 +184,17 @@
         <div class="input-field">
           <asp:TextBox ID="txtPassword" runat="server" CssClass="input-control" TextMode="Password" placeholder="Enter password"></asp:TextBox>
         </div>
-        <a href="#" class="forgot-pass">Forgot Password?</a>
-        <asp:Button ID="btnLogin" runat="server" Text="Log In" CssClass="btn" OnClick="btnLogin_Click" OnClientClick="return validateEmail();" />
-        <asp:Label ID="lblMessage" runat="server" ForeColor="Red" />
-      </form>
-      <div class="bottom-link">Don't have an account? <a href="Signupp.aspx">Signup</a></div>
-    </div>
+                    <asp:Button ID="btnLogin" runat="server" Text="Log In" CssClass="btn"
+                        OnClick="btnLogin_Click" OnClientClick="return validateEmail();" />
+
+                    <asp:Label ID="lblMessage" runat="server" ForeColor="Red" />
+
+                    <div class="bottom-link">
+                        Don't have an account?
+                        <a href="Signupp.aspx">Signup</a>
+                    </div>
+        </form>
+      </div>
   </div>
 </div>
 
